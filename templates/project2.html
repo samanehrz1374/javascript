@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/statics/css/style.css">
+</head>
+<body id="body">
+    <div class="container">
+        <div class="col">
+            <div class="innercontainer">
+                <p id="color" class="color"></p>
+    
+                <button id="click" type="button" class="btn" onclick="myfunction1()">click Me </button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+        function randomcolor(){
+            return(
+                "rgba("+Math.round(Math.random() *250)+","+
+                Math.round(Math.random() *250)+","+
+                Math.round(Math.random() *250)+","+
+                Math.ceil(Math.random() *10)/10+")"
+                );
+        }
+
+        function myfunction1(){
+            document.getElementById("body").style.background=randomcolor();
+            document.getElementById('color').innerHTML="The color is:"+randomcolor();
+        }
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="animate_string('target')">
+    <p id="demo1"></p>
+    <button onclick="myfunction2()">add lemon</button>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <pre id="target">w3resource </pre>
+
+
+
+
+
+
+    <script>
+        let header="Template Literals";
+        let tags=["template literals","javascripts","es6"];
+        let html=`<h2>${header}</h2><ul>`;
+
+        for (const x of tags){
+            html+=`<li>${x}</li>`;
+        }
+        html += `</ul>`;
+        
+        document.getElementById('demo1').innerHTML=html;
+
+        // let x1=123e5;
+        // let x2=3;
+
+        // let x3=0.1*10 + 0.2*10;
+
+        // let x4=NaN;
+        // let x5="20";
+        // console.log(x4+x5)
+
+        let number=2;
+        let txt1="";
+        while (number != Infinity){
+            number=number*number;
+            txt1=txt1+number+"<br>";
+        }
+        document.getElementById('demo2').innerHTML=txt1;
+        let x=123;
+        let y= new Number(123);
+        const cars=[
+            "saab",
+            "volvo",
+            "BMW"
+        ];
+
+        const names=[];
+        names[0]="smaneh";
+        names[1]="samira";
+
+        names.push("zahrs")
+
+        const names2=new Array("ss","ss",5);
+        
+        // document.getElementById('demo2').innerHTML=names.length;
+        // document.getElementById('demo3').innerHTML=names.sort();
+        let x3=cars[cars.length-1]
+        
+        // for (let i=0; i<cars.length;i++){
+            //     console.log(cars[i])
+            // }
+            
+            // let text1="<ul>";
+                // cars.forEach(myfuncation);
+                // text1 += "</ul>"
+                
+                // document.getElementById("demo2").innerHTML = text1;
+
+        // function myfuncation(value){
+        //     text1 +="<li>"+ value+"<li>";
+        // }
+
+        const fruits=["Banana","Orange","Apple"];
+        document.getElementById('demo2').innerHTML=fruits;
+
+        function myfunction2(){
+            fruits.push("lemon")
+            document.getElementById('demo2').innerHTML=fruits;
+
+        }
+
+        const x5=new Array(40);
+        const person=[];
+        
+        person["firstname"]="samaneh";
+        console.log(x5 instanceof Array)
+        const fruits2=["banana","orange","Apple"];
+        // document.getElementById('demo4').innerHTML=fruits2.toString();
+        // let fruit3=fruits2.push("kiwi");
+        // document.getElementById('demo4').innerHTML=fruits2.join(" ");
+        // console.log(fruit3);
+        // fruits[fruits.length]="Kiei"
+        // console.log(fruits)
+        // delete fruits[0];
+        // fruits.pop()
+        // let fruit3=["kiwi"];
+        // fruits.splice(2,1, "Lemon", "Kiwi");
+        let fruit3=fruits.slice(1,2);
+        
+
+        // document.getElementById("demo4").innerHTML=fruits.toString();
+        var today=new Date();
+        var day=today.getDay();
+        var daylist=["Sunday","Monday","Tuesday","Wednsday","Thursday","Friday","Saturday"];
+        
+        document.getElementById('demo4').innerHTML="Today is: "+daylist[day]+".";
+        var hour=today.getHours();
+        // hour=13;
+        
+        var minute=today.getMinutes();
+        var Second=today.getSeconds();
+        var preprand="AM"
+
+        if (hour>12){
+            hour=hour-12;
+            preprand="PM"
+        }
+
+
+        document.getElementById('demo4').innerHTML="Current Time:"+hour+" "+preprand+" : "+minute+" : "+Second;
+        // window.print()
+
+        function area(z1,z2,z3){
+            s=(z1+z2+z3)/2;
+            areas=Math.sqrt(s*((s-z1)*(s-z2)*(s-z3)))
+            console.log(areas)
+
+        }
+
+        function animate_string(id) 
+        {
+            var element = document.getElementById(id);
+            var textNode = element.childNodes[0]; // assuming no other children
+            var text = textNode.data;
+
+            setInterval(function () 
+            {
+            text = text[text.length - 1] + text.substring(0, text.length - 1);
+            textNode.data = text;
+            }, 100);
+        }
+
+        
+        
+        const numarr=[40,100,1,5,25,10];
+        
+        // document.getElementById('demo5').innerHTML=numarr.sort(function(a,b){return a-b;});
+        // document.getElementById('demo6').innerHTML=numarr.sort(function(a,b){return 0.5-Math.random();});
+        // console.log(0.5-Math.random())
+        for (let i=numarr.length-1;i>0;i--){
+            let j=Math.floor(Math.random()*i)
+            let k =numarr[i]
+            numarr[i]=numarr[j]
+            numarr[j]=k
+            console.log(numarr)
+        }
+
+        const numarr2=[1,5,7,6,2,10]
+        // numarr2.sort(function (a,b){return b-a})
+        console.log(numarr2)
+        console.log(numarr2[0])
+        function myarray(numarr2){return Math.min.apply(null,numarr2)}
+
+       
+
+        function myarray2(arr){
+            let len=arr.length;
+            
+            let max=-Infinity;
+            while (len--){
+                if(arr[len]>max){
+                    max=arr[len];
+                    // console.log(max)
+                }
+            }
+            return max;
+        }
+
+        function myarray3(arr){
+            let len=arr.length;
+            
+            let min=Infinity;
+            while (len--){
+                if(arr[len]<min){
+                    min=arr[len];
+                    // console.log(max)
+                }
+            }
+            return min;
+        }
+        
+        
+        const cars2=[
+            {type:"volvo",year:2016},
+            {type:"Aaab",year:2001},
+            {type:"BMW",year:2010}
+        ];
+
+        cars2.sort(function(a, b){
+            let x = a.type.toLowerCase();
+            let y = b.type.toLowerCase();
+            if (x < y) {return -1;}
+            if (x > y) {return 1;}
+            return 0;
+        });
+
+
+        let txt="";
+        numarr2.forEach(myfunction3);
+
+        function myfunction3(value, index, array){
+            txt += value+"<br>";
+
+        }
+
+        numarr3=numarr2.map(myfunction4)
+
+        function myfunction4(value,index,array){
+            return value*2;
+
+        }
+
+        numarr4=numarr2.filter(myfunction5);
+        function myfunction5(value,index,array){
+            return value>5;
+
+        }
+
+        let sum= numarr2.some(myfunction6);
+
+        function myfunction6(value,index,array){
+           return value>5;
+        }
+
+        let sum2= numarr2.findIndex(myfunction7);
+
+        function myfunction7(value,index,array){
+            return value>5;
+        }
+
+       const arr2=fruits.keys()
+            
+        let text = "";
+        for (let x of arr2) {
+        text += x + "<br>";
+        }
+      
+        
+        const f =fruits.entries();
+        for (let x of f){
+            console.log(Array.isArray(x))
+            document.getElementById('demo7').innerHTML+=x;
+            
+        }
+        
+        console.log(fruits.includes("Banana"))
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

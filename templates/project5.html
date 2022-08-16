@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../statics/css/style4.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row max-height align-items-center ">
+            <div class="col-10 mx-auto col-md-6 text-center main-container p-5">
+                <h1 style="color:white ;">COUNTER</h1>
+                <h1 id="counter"></h1>
+                <div class="buttns">
+                    <button class="btn" onclick="lower()">LOWER COUNT</button>
+                    <button class="btn" onclick="upper()">ADD COUNT</button>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+        document.getElementById('counter').innerHTML=0;
+
+        function lower(){
+            let x=document.getElementById('counter').innerHTML;
+            x--;
+            if (x<0){
+
+                document.getElementById('counter').style.color="red";
+            }
+            else if(x===0){
+                document.getElementById('counter').style.color="black";
+
+
+            }
+            document.getElementById('counter').innerHTML=x;
+
+
+        }
+
+        function upper(){
+            let x=document.getElementById('counter').innerHTML;
+            x++;
+            if (x>0){
+
+                document.getElementById('counter').style.color="green";
+            }else if(x===0){
+                document.getElementById('counter').style.color="black";
+            }
+            
+            document.getElementById('counter').innerHTML=x;
+
+        }
+
+
+
+       
+        
+
+
+    </script>
+    
+</body>
+</html>

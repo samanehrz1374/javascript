@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: yellow;
+        }
+        #animate{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background: red;
+        }
+    </style>
+</head>
+<body onload="checkCookies()">
+    <p> <button onclick="myMove()">click me</button></p>
+    <div id="container">
+        <div id="animate">
+            my animation go here
+        </div>
+
+    </div>
+
+    <h2 id="h2" onclick="myfunction1(this)">click on this text!</h2>
+    <p id="demo1"></p>
+
+    <input type="text" id="fname" onchange="upperCase()">
+
+    <p style="border: 1px solid black; padding:10px 15px ;" onmouseover="mover(this)" onmouseout="mout(this)">
+        mouse over me
+    </p>
+
+    <button id="mybtn">click me</button>
+    <p id="demo3"></p>
+
+    <div id="div1">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+    </div>
+
+    <button onclick="myfunction2()">try it</button>
+    <p id="demo4"></p>
+
+    <input id="id1" type="number" min="100" max="300" required>
+    <button onclick="myfunction3()">ok</button>
+    <p id="demo5"></p>
+      
+    <input type="text" id="id2">
+    <p id="demo6"></p>
+    
+    <div id="demo7">
+        <h2>The XMLHttpRequest Object</h2>
+        <button type="button" onclick="loadDoc()">Change Content</button>
+    </div>
+
+
+    <script>
+        function loadDoc() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("demo7").innerHTML =
+            this.responseText;
+        }
+        xhttp.open("GET", "text.txt");
+        xhttp.send();
+        }
+
+        function myfunction2(){
+            let txt;
+            let person= prompt("please enter\n your name:")
+            if (person == null || person == ""){
+                txt="user canceld the prompt";
+            }else{
+                txt="hello "+ person ;
+            }
+            document.getElementById('demo4').innerHTML=txt;
+        }
+
+
+
+
+        document.getElementById('mybtn').addEventListener("click",displayDate);
+
+        function displayDate(){
+            document.getElementById('demo3').innerHTML=Date();
+        }
+
+
+        function mover(obj){
+            obj.innerHTML="thank you";
+
+        }
+
+        function mout(obj){
+            obj.innerHTML="mouse over me";
+        }
+
+
+
+        function upperCase(){
+            const x=document.getElementById('fname');
+            x.value= x.value.toUpperCase();
+        }
+
+
+
+        function myMove(){
+            let id=null;
+            let elem=document.getElementById('animate');
+            let pos =0;
+            clearInterval(id);
+            id = setInterval(frame,5);
+            function frame(){
+                if (pos == 350){
+                    clearInterval(id);
+                } else{
+                    pos++;
+                    elem.style.top= pos+"px";
+                    elem.style.left= pos+"px";
+                }
+            }
+
+            
+        }
+
+
+        function myfunction1(id){
+            id.innerHTML="Opps"
+        }
+
+        class Car{
+            constructor(brand){
+                this.carname=brand;
+
+            }
+            present (){
+                return 'i have a' +this.carname;
+            }
+        }
+
+        class Model extends Car{
+            constructor(brand, mod){
+                super(brand);
+                this.model = mod;
+            }
+            show() {
+                return this.present() + ', it is a '+this.model;
+            }
+        }
+
+        let mycar= new Model("ford","mustang")
+        console.log(mycar.show())
+
+        function checkCookies() {
+        var text = "";
+        if (navigator.cookieEnabled == true) {
+            text = "Cookies are enabled.";
+        } else {
+            text = "Cookies are not enabled.";
+        }
+        document.getElementById("demo1").innerHTML = text;
+        }
+
+        console.log(document.getElementById('h2').nodeType)
+
+
+        const pera= document.createElement("p");
+        const node= document.createTextNode("this is new");
+        pera.appendChild(node);
+
+        const element=document.getElementById("div1");
+        element.appendChild(pera);
+        element.remove();
+
+        // console.log(window.location.assign("https://www.w3schools.com"))
+        console.log(document.cookie)
+        function myfunction3(){
+            const inpObj = document.getElementById("id1");
+            if (!inpObj.checkValidity()) {
+                document.getElementById("demo5").innerHTML = inpObj.validationMessage;
+            } else {
+                document.getElementById("demo5").innerHTML = "Input OK";
+            } 
+        }
+
+        // localStorage.setItem("name","John Doe");
+        // document.getElementById("demo6").innerHTML = localStorage.getItem("name");
+
+        getText("text.txt")
+
+        async function getText(file){
+            let myObj= await fetch(file);
+            let y =await myObj.text();
+            document.getElementById("demo6").innerHTML = y;
+        }
+
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+    </script>
+
+
+    
+</body>
+</html>

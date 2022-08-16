@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../statics/css/style5.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="image" class="inner">
+            <a class="btn btn-left" onclick="myfunction1()"><i class="material-icons">arrow_left</i></a>
+            <a class="btn btn-right" onclick="myfunction2()"><i class="material-icons">arrow_right</i></a>
+        </div>
+        <p id="demo"></p>
+        
+        
+
+    </div>
+
+    <script>
+
+        const images=[ "contBcg-0","contBcg-1","contBcg-2","contBcg-3","contBcg-4"];
+        let counter=0;
+
+        function myfunction1(){
+            counter--
+            if (counter<0){
+                counter =images.length-1
+            }
+            document.getElementById('image').style.backgroundImage=`url('../images/${images[counter]}.jpeg')`
+
+        }
+        
+
+        function myfunction2(){
+            counter++
+            if (counter>images.length-1){
+                counter =0
+            }
+            document.getElementById('image').style.backgroundImage=`url('../images/${images[counter]}.jpeg')`
+
+        }
+
+
+
+    </script>
+    
+    
+</body>
+</html>

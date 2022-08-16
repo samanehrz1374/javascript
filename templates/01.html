@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Myfunction(){
+            document.getElementById('jav').innerHTML="paragraph";
+        }
+    </script>
+</head>
+<body>
+    <h2>What can javaScript Do</h2>
+        
+    <p id="jav">JavaScript can change HTML attribute values.</p>
+    <button type="button" onclick="Myfunction();" >jav</button>
+
+    <p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+  
+    
+    <button onclick="document.getElementById('myImage').src='../images/quality.png'">Turn on the light</button>
+
+    <img id="myImage" src="../images/7-rooz.png" style="width:100px">
+
+    <button onclick="document.getElementById('myImage').src='../images/5-logo-eliadecor.png'">Turn off the light</button>
+
+    <p id="demo">JavaScript</p>
+    <button id="font" type="button" onclick="document.getElementById('demo').style.fontSize='35px'">click me</button>
+
+    <p id="dis">salam</p>
+    <button type="button" onclick="document.getElementById('dis').style.display='none'">click me to cover p</button>
+
+    <p id="show" style="display: none;">show me</p>
+    <button type="button" onclick="document.getElementById('show').style.display='block'">show me</button>
+
+
+    <p id="inner"></p>
+    <button type="button" onclick="document.write(5+6)">write 11</button>
+
+    <button type="button" onclick="window.print()">print</button>
+
+    <p id="inner2">Hello</p>
+    <p id="iner">s</p>
+
+    <p id="oprators"></p>
+
+    <script src="../statics/js/script1.js"></script>
+
+    <button  onclick=displaydate()>show time</button>
+    <p id="date"></p>
+
+    <p id="innerhtml"></p>
+    
+</body>
+
+<script>
+    document.getElementById('show').innerHTML='samaneh'+'ssssss'
+    document.getElementById('inner').innerHTML=5+6;
+    document.write(5+6)
+    document.write(5+6)
+    // alert(5+6)
+    document.getElementById('inner2').innerHTML='Bye'
+
+
+    console.log(1)
+
+    let x,y,z;
+    x=5;
+    y=6;
+    z=x+y
+    document.getElementById("iner").innerHTML=12;
+    let d;
+    d="My name";
+    let car='volvo',name='samane';
+    // let c=5+2+'5';
+    let $='hello worda';
+    console.log($.length)
+    let $$='HEloo';
+    var c=5;
+    var c;
+    const ss=10;
+
+    let xx = 5 + 5;
+    let yy = "5" + 5;
+    let zz =  5+5+"Hello" ;
+
+
+    let cars=["saab","volvo","BMW"];
+    cars[0]="toyota";
+    cars.push("audi")
+    
+    console.log(zz)
+
+
+    let carss={type:"Fiat",model:"500",color:"white"};
+    carss.color="red";
+    
+    
+    console.log(carss)
+    let al=10;
+    al=5;
+    console.log(al+' '+'s')
+    // alert(d)
+    // alert(z)
+
+    var u=10;
+
+    let xe=x+y*y;
+    
+    // xe=Math.pow(xe,2);
+    // xe=xe**2;
+    console.log(xe)
+
+    {var u=11;}
+
+    let a=30;
+    let b=30;
+    a %=7;
+    document.getElementById('oprators').innerHTML=a;
+
+    let obj={first_namt:"john",last_name:"Doe"}
+
+    obj.first_namt=16+5+"samaneh's'"
+    console.log(obj)
+
+    let num1=10e-5;
+    console.log(num1)
+
+    let list1=["samaneh","samira","zahra"]
+    list1.push("really")
+    console.log(list1[3])
+
+    let obj1={course:"electronic",mark:"15"}
+    obj1.course="s"
+    console.log(typeof(list1))
+
+    function Myfunction2(p1,p2){
+        return p1*p2;
+    }
+    document.getElementById('oprators').innerHTML=Myfunction2(4,3)
+
+    function toCelsius(f){
+        return (5/9)*(f-32)
+    }
+    document.getElementById('oprators').innerHTML="the temperature is "+ toCelsius(77)+" Celsius"
+
+    const person={
+        first_name:"samaneh",
+        last_name:"rezaie",
+        age:"27" ,
+        fullname:function (){
+            document.getElementById('oprators').innerHTML="My name is "+this["first_name"]+"."+" my last name is "+this.last_name+"." + " I am "+this.age +" old."
+        }
+    }
+    person.fullname()
+     
+    function displaydate(){
+        document.getElementById('date').innerHTML="this is a ss";
+        
+      
+    }
+
+    let x2= new String("John");
+    let y2=new String("John");
+    document.getElementById('date').innerHTML=typeof (x2)+" "+typeof(y2);
+    console.log((x2===y2))
+    console.log(x2.slice(-3,-1))
+
+    let part1=x2.slice(-3)
+    console.log(part1)
+    let part2=x2.substring(1)
+    console.log(part2)
+
+    let part3=x2.substr(-1)
+    console.log(part3)
+
+
+    let text = "Please visit Microsoft and Microsoft !";
+    let newText = text.replace(/Microsoft/g, "W3Schools");
+    let text2= text.toUpperCase()
+    console.log(text2);
+    let text3= text.concat(" ",text2);
+    console.log(text3)
+
+    let text4="      Hello !     ";
+    let text5=text4.trim();
+    console.log(text5)
+
+    let text6="1245";
+    let text7=text6.padStart(5,"x");
+    console.log(text7)
+
+    let numb1=5;
+    let text9=numb1.toString();
+    let padded=text9.padEnd(4,"0")
+
+    let text10="Hello Word";
+    console.log(text10.charAt(0))
+
+    console.log(text10.charCodeAt(0))
+    console.log(text10.substring(0,1))
+
+    document.getElementById('innerhtml').innerHTML=text10[0]
+
+    text10=text10.split("")
+    console.log(text10)
+
+    let str = "Please locate where 'locate' occurs!";
+    
+    console.log(str.lastIndexOf("locate"))
+    console.log(str.search("locate"))
+
+    let text11="The rains The in SPTheAIN stays mainly in the plain ";
+    console.log(text11.startsWith("The"))
+    console.log(text11.endsWith("The",13))
+
+
+    let text12=`Hell"o" Word`
+    document.getElementById('innerhtml').innerHTML=text12;
+
+    text13=`Welcome to ${text12}`;
+    document.getElementById('innerhtml').innerHTML=text13;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

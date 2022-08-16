@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../statics/css/style6.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="inner">
+                <div class="comment">
+
+                    <h2 style="color:rgb(241,80,37) ;">CLIENT</h2>
+                    <h1 style="color: white;">TESTIMONIALS</h1>
+                </div>
+                <div style="margin-top: 100px;">
+                    <div class="commentdiv">
+                        <a class="btn btn-left" onclick="myfunction1()" ><i class="material-icons">arrow_left</i></a>
+                        <a class="btn btn-right" onclick="myfunction2()"><i class="material-icons">arrow_right</i></a>
+
+                        <div><img src="../images/customer-0.jpg" class="imgcard" id="imgcard"></div>
+                        <div id="name" class="nameofcomment">John</div>
+                        <div><i class="material-icons star">star</i><i class="material-icons star">star</i><i class="material-icons star">star</i><i class="material-icons star">star</i><i class="material-icons star">star</i></div>
+                        <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis neque reprehenderit laborum, corporis explicabo assumenda. Porro impedit consectetur animi, reprehenderit recusandae sapiente at aliquam reiciendis modi ipsam rerum suscipit distinctio?</p>
+    
+                    </div>
+
+                </div>
+                
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script>
+        customerImage=document.getElementById('imgcard');
+        customerName=document.getElementById('name');
+        customerText=document.getElementById('text')
+
+
+        const customers = []
+
+
+        //Customer Constructor
+        function Customer(img, name, text) {
+            this.img = img
+            this.name = name
+            this.text = text
+        }
+
+        //Create new customer using the constructor function
+
+        function createCustomer(img, name, text) {
+
+            let fullImg = `../images/customer-${img}.jpg`
+            let customer = new Customer(fullImg, name, text)
+
+            customers.push(customer)
+        }
+
+        createCustomer(0, 'John', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis neque reprehenderit laborum, corporis explicabo assumenda. Porro impedit consectetur animi, reprehenderit recusandae sapiente at aliquam reiciendis modi ipsam rerum suscipit distinctio?')
+        createCustomer(1, 'Sandy', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock')
+        createCustomer(2, 'Amy', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.')
+        createCustomer(3, 'Tyrell', 'If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text.')
+        createCustomer(4, 'Wanda', 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.')
+        
+        let counter=0;
+
+        // document.getElementById('text').innerHTML=text[0]
+
+        function myfunction1(){
+            console.log(customers[0].name)
+            if (counter===0){
+                counter= customers.length;
+            }
+            counter--;
+            customerImage.src = customers[counter].img
+            customerName.textContent = customers[counter].name
+            customerText.textContent = customers[counter].text
+
+
+
+
+        }
+
+        function myfunction2(){
+            console.log(customers[0].name)
+            counter++;
+            if (counter===customers.length){
+                counter= 0;
+            }
+            customerImage.src = customers[counter].img
+            customerName.textContent = customers[counter].name
+            customerText.textContent = customers[counter].text
+
+
+
+
+        }
+
+    </script>
+    
+</body>
+</html>

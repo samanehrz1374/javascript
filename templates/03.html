@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <input id="demo3" value="18">
+    <button onclick="myfunction1()">Try it</button>
+    <p id="demo4"></p>
+
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+
+    <input id="demo7" type="text">
+    <button type="button" onclick="myfunction5()">try</button>
+    <p id="demo8"></p>
+
+    <p id="demo9"></p>
+
+
+
+    <script>
+        
+        const month=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        const d =new Date();
+        d.setDate(10);
+        
+        
+        
+        document.getElementById('demo').innerHTML=d;
+
+        const num1=Math.floor(Math.random()*10);
+        document.getElementById('demo1').innerHTML=num1;
+
+        function getrandom(min,max){
+            return math.floor(Math.random()*(max-min+1))+min;
+        }
+
+        document.getElementById('demo2').innerHTML="2"=="12";
+        
+        function myfunction1(){
+            let votable;
+            let age=document.getElementById('demo3').value;
+            if (isNan(age)){
+                votable="Input is not a number";
+            }else{
+                votable =(age<18)?"Too younge":"old Enough";
+            }
+            
+            document.getElementById("demo4").innerHTML=votable+"to vote"
+        }
+
+        let dd=new Date();
+        let day=dd.getDay();
+        // console.log(hour)
+        switch (day){
+            case 0:
+                day="sunday";
+                break;
+            case 1:
+                day="Monday";
+                break;
+            case 2:
+                day="Tuesday";
+                break;
+            case 3:
+                day="Wednsday";
+                break;
+            case 4:
+
+        }
+        const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+        let text2=""
+        let i=0;
+        for (; i<cars.length;){
+            text2 += cars[i]+"<br>"
+            i++;
+            
+        }
+
+        const person={fname:"John",lname:"Doe",age:25};
+        let text3="";
+        for (let x in person){
+            text3 +=" "+ person[x];
+        }
+
+        for(let x of cars){
+            text3 += cars[x]
+        }
+
+        let text4=""
+        cars.forEach(myfunction2)
+
+        function myfunction2(value,index,array){
+            text4 +=value;
+
+        }
+
+        let language="JAVA";
+        for (let x in language){
+            console.log(x)
+        }
+        let x=0;
+        while(x<3){
+            x++;
+            console.log(x)
+        }
+
+
+        for (let i=0;i<10;i++){
+            if (i==3){
+                continue;
+            }
+            console.log(i)
+        }
+
+        const fruits = new Map([
+            ["apples", 500],
+            ["bananas", 300],
+            ["oranges", 200]
+            ]);
+
+        let text5="";
+
+        for (const x of fruits){
+            text5+=x+"<br>"
+        }
+
+        const letters=new Set();
+        letters.add("a");
+        letters.add("b");
+        letters.add("c");
+        console.log(letters)
+
+        let text6="";
+        letters.forEach(myfunction3)
+        function myfunction3(value){
+            text6+=value
+        }
+        console.log(letters.values())
+
+
+        
+
+        document.getElementById('demo5').innerHTML=text5;
+
+
+        function addUp(num) {
+        let total=0
+            for (let i=0;i<num+1;i++){
+                total+=i
+                console.log(total);
+                
+                
+            }
+            return total;
+        
+        }
+        
+        const fruits2=new Map();
+        fruits2.set("apples",500);
+        fruits2.set("bananas",300);
+        fruits2.set("oranges",200);
+        // fruits2.delete("apples");
+        let text7="";
+        fruits2.forEach(function(value,key){text7+=key+"="+value+"<br>"});
+        let text8="";
+        for (const [x,y] of fruits2.entries()){
+            text8 +=x+y
+        }
+
+
+        document.getElementById('demo6').innerHTML=text8;
+        let datee=new Date();
+
+        function myfunction4(arr1){
+            return arr1.constructor.toString().indexOf("Date")>-1;
+
+        }
+        let x2="5";
+        let y2=+x2;
+
+        let datee1=new Date();
+        console.log(typeof datee1);
+
+        function dec2bin(dec){
+            console.log(dec >>>0);
+
+            
+            return (dec >>>0).toString(2);
+        }
+        let c="Is this all there is 12345679";
+        const pattern=/e/;
+        let patern_in= pattern.exec("salame")
+
+        console.log(patern_in[0]);
+
+        try{
+            adddlert("Welcome")
+
+        }
+        catch(err){
+            document.getElementById("demo").innerHTML=err.message;
+
+        }
+       
+
+        function myfunction5(){
+            const message=document.getElementById("demo8");
+            let x=document.getElementById('demo7').value;
+            try{
+                if (x == "") throw "is empty";
+                if (isNaN(x)) throw "is not a number";
+                x= Number(x);
+                if(x>10) throw "is too high";
+                if(x<5) throw "is too low";
+
+
+            }
+            catch(err){
+                message.innerHTML="Input"+err;
+
+            }
+            finally{
+                document.getElementById("demo7").value="";
+
+            }
+        }
+
+        let num2=1;
+        try{
+            decodeURI("%%%")
+
+        }
+        catch(err){
+            console.log(err.name)
+
+        }
+        
+        myfunction6();
+        function myfunction6(){
+            
+            x6=5;
+        }
+        
+
+        
+        console.log(x6);
+        x7=5;
+        var x7;
+
+
+        console.log(eval("x=2"))
+
+        const person1={
+            firstname:"samaneh",
+            lastname:"rezaie",
+            fullname:function(){ return this.firstname+' '+this.lastname;} 
+        }
+
+        const person2={
+            firstname:"samaneh",
+            lastname:"rezaie",
+            // fullname:function(){ return this.firstname+' '+this.lastname;} 
+        }
+        let fullnamee=person1.fullname.bind(person2)
+        
+        
+        hello = function() {
+            return "hello";
+        }
+
+        hello = (val) => "hello word"+val;
+
+        hello = val=>"helllllo"+val;
+        
+        console.log(hello('s'))
+
+        class Car{
+            constructor(name,year){
+                this.name=name;
+                this.year=year;
+            }
+            age(){
+                let date2=new Date();
+                return date2.getFullYear()-this.year;
+
+            }
+
+        }
+        const mycar=new Car("ford",2014)
+        console.log(mycar.age())
+
+        let text9='{"employees":[' +
+        '{"firstName":"John","lastName":"Doe" },' +
+        '{"firstName":"Anna","lastName":"Smith" },' +
+        '{"firstName":"Peter","lastName":"Jones" }]}';
+
+                        
+        const obj = JSON.parse(text9);
+        document.getElementById("demo9").innerHTML =
+        obj.employees[1].firstName + " " + obj.employees[1].lastName;
+        // document.getElementById('demo9').innerHTML=obj.employees[1].firstname
+        
+        
+        console.log(typeof x3!=='undefined' && x3!==null)
+
+    </script>
+
+    <script type="module">
+        import message from "../statics/js/script2.js"
+        console.log(message())
+    </script>
+
+
+
+    
+</body>
+</html>

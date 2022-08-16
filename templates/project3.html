@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../statics/css/style2.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="col">
+            
+            <div class="container2">
+                <div>
+                    <button class="btn" onclick="myfunction()"> Generate Quote</button>
+
+                </div>
+                <div id="text">
+                    
+                    <h3 class="text2">
+                        <!-- <span style="margin-right: 1rem!important;"></span> -->
+                        <img src="../images/Capture.PNG" width="50">
+                        <span  id="text1" ></span>
+                        
+
+                    </h3>
+                </div>
+                
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+        document.getElementById("text1").innerHTML="The price of anything is the amount of life you exchange for it. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores architecto dolore impedit numquam corrupti asperiores animi, voluptates voluptas assumenda soluta dignissimos, provident distinctio excepturi quae rerum ad non sequi eius.";
+
+        var ipsum = ["Life is like a landscape. You live in the midst of it but can describe it only from the vantage point of distance.","Humor is richly rewarding to the person who employs it. It has some value in gaining and holding attention. But it has no persuasive value at all","The price of anything is the amount of life you exchange for it.","Humor is richly rewarding to the person who employs it. It has some value in gaining and holding attention. But it has no persuasive value at all","The price of anything is the amount of life you exchange for it."];
+        function randomtext(){
+            return(
+                ipsum[Math.round(Math.random() *4)]
+            );
+            
+
+        }
+
+        function myfunction(){
+            document.getElementById('text1').innerHTML=randomtext();
+        }
+
+    </script>
+
+    
+</body>
+</html>
