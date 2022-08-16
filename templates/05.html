@@ -62,15 +62,60 @@
     </div>
 
 
+    <div id="demo8">
+        <h2>The XMLHttpRequest Object</h2>
+        <button type="button" onclick="loadDoc2()">Change Content</button>
+    </div>
+
+    <form action="">
+        <select name="customers" onchange="showCustomer(this.value)">
+            <option value="">select a customer</option>
+            <option value="ALFKI">ALfreds</option>
+            <option value="NORTS ">North/South</option>
+            <option value="WOLZA">Wolski Zajazd</option>
+
+        </select>
+    </form>
+    <div id="txtHint">Customer info will be listed here...</div>
+
     <script>
+        function showCustomer(str) {
+        if (str == "") {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        }
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("txtHint").innerHTML = this.responseText;
+        }
+        xhttp.open("GET", "getcustomer.php?q="+str);
+        xhttp.send();
+        }
+
+        git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+
         function loadDoc() {
         const xhttp = new XMLHttpRequest();
         xhttp.onload = function() {
-            document.getElementById("demo7").innerHTML =
-            this.responseText;
+            const myObj = JSON.parse(this.responseText);
+            document.getElementById("demo7").innerHTML = myObj.name;
         }
+
         xhttp.open("GET", "text.txt");
         xhttp.send();
+        }
+
+        
+
+        function loadDoc2(){
+            const xhttp=new XMLHttpRequest();
+            xhttp.onload= function(){
+                document.getElementById("demo8").innerHTML=this.responseText;
+            }
+            xhttp.open("GET","text.txt?fname=samaneh&lname=rezaie");
+            xhttp.send()
         }
 
         function myfunction2(){
